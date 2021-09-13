@@ -1,6 +1,8 @@
 <?PHP 
+ session_start();
 
-require "./routing.php";
+
+require_once "./routes/routes.php";
 
 
 

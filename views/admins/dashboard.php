@@ -20,22 +20,37 @@
 <?php
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+
   if(empty($_REQUEST["user_name"]) || empty($_REQUEST["password"])){
-?>
+    $_SESSION["error"]="user_name un valid";
+ 
+    header("location:/doctor/log");
 
-<div class="alert alert-danger alert-dismissible fade show mt-5">
-    User name is require3d
-</div>
-
-<?php
-$_REQUEST["user_name"];
-}
-
+    exit();
+  }
+  
 }
 ?>
 
 
-<form action="/doctor/log" method="post">
+
+
+
+
+
+
+
+<?php  
+ if(!empty($_SESSION["error"])){
+  echo  '<div class="alert alert-danger mt-5" role="alert">'.$_SESSION["error"].'</div>';
+ 
+  $_SESSION["error"]="";
+ }
+ 
+ 
+ ?>
+
+<form action="/doctor/log" method="post" >
   <div class="form-group mt-5">
     <label for="email">Email address:</label>
     <input type="email" class="form-control" placeholder="Enter email" name="user_name" id="email">
