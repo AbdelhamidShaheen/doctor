@@ -9,9 +9,11 @@
 <body>
 
 
+
+
 <div class="container flex mt-3"> 
-  <a href="/doctor/signin" class="btn btn-primary ">SIGN IN</a>
-  <a href="/doctor/signup"  class="btn btn-primary ">SIGN UP</a>
+  <a href=<?php echo route("login")?> class="btn btn-primary">LOGIN</a>
+  <a href=<?php echo route("register")?>   class="btn btn-primary ">REGISTER</a>
 </div>
 <div class="page-wrap d-flex flex-row align-items-center">
     <div class="container">

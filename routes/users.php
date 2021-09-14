@@ -1,18 +1,23 @@
 <?php
 
-switch ($_SERVER['REQUEST_URI']) {
-    case "/doctor/":
-        require_once "./views/home.php";
-        break;
-    case "/doctor/signin":
-        require_once "./views/users/signin.php";
-        break;
 
-    case "/doctor/signup":
-        require_once "./views/users/signup.php";
-        break;
-    default:
-        http_response_code(404);
-        require_once "./views/notfound.php";
-        exit();
-}
+
+$view_pass="views/users/";
+
+
+return [
+    "login" => [
+        "uri" => "/doctor/login",
+        "action" => $view_pass."register.php",
+    ],
+    "register" => [
+        "uri" => "/doctor/register",
+        "action" => $view_pass."login.php",
+    ],
+    "home" => [
+        "uri" => "/doctor/",
+        "action" => "views/"."home.php",
+    ],
+];
+
+?>
